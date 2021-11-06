@@ -1,9 +1,7 @@
 var vaccinated = true;
-var name = 'Dude';
-var message = 'Hello'+ name + 'Vaccination Card Approved, Welcome to Dp Cakery';
+var name = 'Dude,';
+var message = 'Hello ' + name + ' Vaccination card approved. Welcome to Dp Cakery!';
 
-var element = document.getElementByID('boba');
+var element = document.getElementById('boba');
 
-element.textContext = message;
-
-console.log(message);
+element.textContent = message;
