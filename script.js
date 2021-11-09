@@ -6,8 +6,12 @@ var element = document.getElementById('boba');
 
 element.textContent = message;
 
+//vaccination card object
+
 var vaccineCard= {
-  name: 'Steve Rogers',
-  TypeofVaccine: 'Sinopharm',
+  nameofPatron: 'Steve Rogers',
+  nameofVaccine: 'Sinopharm',
+  age: '101',
+  secondDosage: new Date('Nov 9,2021 02:00:00'),
   fullyVaccinated = true,
 }
