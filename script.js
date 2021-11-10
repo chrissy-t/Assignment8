@@ -1,5 +1,3 @@
-//forhead gun object
-var forheadGun= new Object();
 
 
 
@@ -12,7 +10,7 @@ var message = 'Hello ' + name + ' Vaccination card approved. Welcome to Dp Caker
 var element = document.getElementById('boba');
 
 element.textContent = message;
-
+console.log (message);
 
 //vaccination card object
 
@@ -26,13 +24,14 @@ var vaccineCard= {
 
 //method to check if patron is not fully vaccinated
 
-calculateDifference: function(){
+getDifference: function(){
   var today = new Date()
   var difference = today.getTime () - vaccineCard.secondDosage.getTime();
   difference = Math.floor(difference / 84600000);
   return diference;
+}
 
-},
+};
 
 var date = vaccineCard.checkDifference();
 var daysLeft = 14 - date;
