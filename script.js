@@ -38,8 +38,8 @@ if(vaccineCard.fullyVaccinated == true) {
   if(date >=14) {
     var message = document.getElementById("message");
    message.textContent = "Thank you for being Fully Vaccinated! Have some boba.";
-
- } else {
+ }
+ else {
  var message = document.getElementById("message");
  message.textContent = "There's " + daysLeft + " days until you are fully vaccinated.";
 }
