@@ -46,3 +46,4 @@ if(vaccineCard.fullyVaccinated == true) {
 } else { var message = document.getElementById("message");
     message.textContent= "You are not Vaccinated. Shame on you.";
 }
+//Michael I have no idea why my message is not showing up. I want to cry
