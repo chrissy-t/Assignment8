@@ -1,6 +1,4 @@
-
-
-
+//should i put forhead gun object??
 
 
 var vaccinated = true;
@@ -18,7 +16,7 @@ var vaccineCard= {
   nameofPatron: 'Steve Rogers',
   nameofVaccine: 'Sinopharm',
   age: '101',
-  secondDosage: new Date('Nov 9,2021 02:00:00'),
+  secondDosage: new Date('Nov 8, 2021 02:00:00'),
   fullyVaccinated : true,
 
 
