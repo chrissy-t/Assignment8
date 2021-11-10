@@ -19,16 +19,16 @@ var vaccineCard= {
   nameofVaccine: 'Sinopharm',
   age: '101',
   secondDosage: new Date('Nov 9,2021 02:00:00'),
-  fullyVaccinated = true,
+  fullyVaccinated : true,
 
 
 //method to check if patron is not fully vaccinated
 
 getDifference: function(){
-  var today = new Date()
+  var today = new Date();
   var difference = today.getTime () - vaccineCard.secondDosage.getTime();
   difference = Math.floor(difference / 84600000);
-  return diference;
+  return difference;
 }
 
 };
@@ -46,5 +46,5 @@ if(vaccineCard.fullyVaccinated == true) {
  message.textContent = "There's " + daysLeft + " days until you are fully vaccinated.";
 }
 } else { var message = document.getElementById("message");
-    message.textContent= "You are not Vaccinated. Shame on you."
+    message.textContent= "You are not Vaccinated. Shame on you.";
 }
