@@ -31,7 +31,7 @@ getDifference: function(){
 
 };
 
-var date = vaccineCard.checkDifference();
+var date = vaccineCard.getDifference();
 var daysLeft = 14 - date;
 
 if(vaccineCard.fullyVaccinated == true) {
