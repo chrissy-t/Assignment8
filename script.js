@@ -1,4 +1,45 @@
-//should i put forhead gun object??
+//create object for ID Card
+function idCard(expieryDate){
+  this.expieryDate = new Date(expieryDate);
+  this.today = new Date();
+  this.checkExpiration = function() {
+     var difference = this.today.getTime() - this.expiration.getTime();
+     var sign = Math.sign(difference);
+     if (sign == -1) {
+       return false;
+     } else if (sign == 1) {
+       return true;
+     };
+   }
+   this.expiration = this.checkExpiration();
+ }
+  function idCard(patronName){
+    this.name =patronName;
+  }
+
+var customer1 = new idCard('Bella Loca Swan', '2025-02-08');
+var customer2 = new idCard('Edward Cullen', '2022-09-02');
+var customer3 = new idCard('Jacob Black', '2011-10-25');
+var customer4 = new idCard('Jasper Hale', '2021-12-22');
+
+ var idCardArray = [customer1, customer2, customer3, customer4];
+
+
+
+ function makeTableHTML(idCardArray) {
+     var result = "<table border=1>";
+     for(var i=0; i<idCardArray.length; i++) {
+         result += "<tr>";
+         for(var j=0; j<idCardArray[i].length; j++){
+             result += "<td>"+idCardArray[i][j]+"</td>";
+         }
+         result += "</tr>";
+     }
+     result += "</table>";
+
+     return result;
+ }
+
 
 
 var vaccinated = true;
@@ -46,4 +87,3 @@ if(vaccineCard.fullyVaccinated == true) {
 } else { var message = document.getElementById("message");
     message.textContent= "You are not Vaccinated. Shame on you.";
 }
-//Michael I have no idea why my message is not showing up. I want to cry
