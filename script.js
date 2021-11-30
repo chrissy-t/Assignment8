@@ -3,6 +3,7 @@ function idCard(name,expiryDate){
   this.name= name;
   this.expiryDate = new Date(expiryDate);
   this.today = new Date();
+  //checks expiration of ID Card
   this.checkExpiration = function() {
      var difference = this.expiryDate.getTime() - this.today.getTime();
      var sign = Math.sign(difference);
@@ -17,7 +18,12 @@ function idCard(name,expiryDate){
     }
    
     //create array for ID card
-
+    for (var i = 0; i < idCardArray.length; i++){
+      if (idCardArray[i].expired) {
+        console.log ('denied')
+      } else {
+        console.log('granted')
+      }
 var customer1 = new idCard('Bella Loca Swan', '2025/02/08');
 var customer2 = new idCard('Edward Cullen', '2011/09/02');
 var customer3 = new idCard('Jacob Black', '2022/10/25');
@@ -27,7 +33,7 @@ var customer4 = new idCard('Jasper Hale', '2021/12/22');
 
  
 
- 
+ /*
 //vaccine card object
 function vaccineCard(name, firstDosage, secondDosage){
   this.name = name;
