@@ -4,15 +4,17 @@ function idCard(name,expiryDate){
   this.expiryDate = new Date(expiryDate);
   this.today = new Date();
   this.checkExpiration = function() {
-     var difference = this.today.getTime() / this.expiration.getTime();
+     var difference = this.expiryDate.getTime() - this.today.getTime();
      var sign = Math.sign(difference);
+     console.log(difference)
      if (sign == -1) {
        return true;
      } else if (sign == 1) {
        return false;
      }
-     this.expired= this.checkExpiration();
     };
+     this.expired = this.checkExpiration();
+    }
    
     //create array for ID card
 
@@ -24,10 +26,20 @@ var customer4 = new idCard('Jasper Hale', '2021/12/22');
  var idCardArray = [customer1, customer2, customer3, customer4];
 
  
+for (var i = 0; i < idCardArray.length; i++){
+  if (idCardArray[i].expired) {
+    console.log ('denied')
+  } else {
+    console.log('granted')
+  }
+  //console.log(idCardArray[i].expired);
 
+}
+ 
+//vaccine card object
 function vaccineCard(name, firstDosage, secondDosage){
   this.name = name;
-  this.firstDosage = new Date(firstDosage);
+  his.firstDosage = new Date(firstDosage);
   this.secondDosage = new Date(secondDosage);
   this.nameMatch= function (index){
   if (idCardArray[index].name=this.name){
