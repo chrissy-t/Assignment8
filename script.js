@@ -43,6 +43,54 @@ function vaccineCard(name, firstDosage, secondDosage){
   var customerVax4 = new vaccineCard ('Jasper Hale','2021/10/26','2021/11/26')
 
   var vaccineCardArray = [customerVax1, customerVax2, customerVax3, customerVax4];
+
+  this.calculateDays =function(){
+    this.difference = this.today.getTime() - this.secondDosage.getTime();
+    difference = Math.floor (difference / 86400000);
+    return this.difference;
+  }
+
+  if(idCardArray[index].expired == false){
+    if (idCardArray[index].name == this.name){
+      if (this.vaccinated == true) {
+        if (date >= 14) {
+          return "Fully Vaccinated sir";
+        }else {
+          return "Not allowed entry";
+        }
+      } else {
+        return "Not allowed entry";
+      }
+    } else {
+      return "Not allowed entry";
+    }
+  } else {
+    return "Not allowed entry";
+  }
+
+  this.checkCustomerStatus= function (index){
+    if (idCardArray[index].expiry == true){
+      return "YOUR ID CARD IS EXPIRED";
+    }else if (idCardArray[index].name == this.name){
+      return "NAMES ON CARD ARE NOT A MATCH";
+    }else if (!this.firstDosage){
+      return "FIRST VACCINE SHOT NOT RECIEVED";
+    }else if (!this.secondDosage){
+      return "SECOND VACCINE SHOT NOT RECIEVED";
+    }else if(this.calculateDays() < 14){
+      return " THE REQURED 14 DAYS HAS NOT PASSED SINCE SECOND DOSAGE";
+    }else{
+      return "YOU ARE FULLY VACCINATED";
+    }
+  }
+
+  var vaccineArray = vaccineCardArray.length;
+  for (var i=0; i< vaccineArray; i++){
+    document.write("<tr>")
+    document.write("<td>", idCardArray[i].name, "</td>")
+    document.write("<td>", vaccineArray[i].checkVaccination(i), "</td>")
+    document.write("</tr>")
+  }
 /*
 var vaccinated = true;
 var name = 'Dude,';
