@@ -45,9 +45,9 @@ this.calculateDays= function(){
   var difference = today.getTime() - this.secondDosage.getTime();
   difference= Math.floor (difference/ 86400000);
   return difference;
-}
-}
-}
+};
+
+
   var customerVax1 = new vaccineCard ('Bella Loca Swan', '2021/03/31', '2021/04/31' );
   var customerVax2 = new vaccineCard ('Edward Cullen','2021/09/12','2021/10/12');
   var customerVax3 = new vaccineCard ('Jacob Black','2021/02/15','2021/03/15');
