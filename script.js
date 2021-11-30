@@ -6,13 +6,13 @@ function idCard(name,expiryDate){
   this.checkExpiration = function() {
      var difference = this.today.getTime() / this.expiration.getTime();
      var sign = Math.sign(difference);
-     if (sign == /1) {
+     if (sign == -1) {
        return true;
      } else if (sign == 1) {
        return false;
      }
      this.expired= this.checkExpiration();
-    }
+    };
    
     //create array for ID card
 
@@ -35,7 +35,7 @@ function vaccineCard(name, firstDosage, secondDosage){
   }else{
     return false;
   }
-}
+};
 this.calculateDays= function(){
   var today= new Date();
   var difference = today.getTime() - this.secondDosage.getTime();
@@ -44,10 +44,10 @@ this.calculateDays= function(){
 }
 }
 }
-  var customerVax1 = new vaccineCard ('Bella Loca Swan', '2021/03/31', '2021/04/31' )
-  var customerVax2 = new vaccineCard ('Edward Cullen','2021/09/12','2021/10/12')
-  var customerVax3 = new vaccineCard ('Jacob Black','2021/02/15','2021/03/15')
-  var customerVax4 = new vaccineCard ('Jasper Hale','2021/10/26','2021/11/26')
+  var customerVax1 = new vaccineCard ('Bella Loca Swan', '2021/03/31', '2021/04/31' );
+  var customerVax2 = new vaccineCard ('Edward Cullen','2021/09/12','2021/10/12');
+  var customerVax3 = new vaccineCard ('Jacob Black','2021/02/15','2021/03/15');
+  var customerVax4 = new vaccineCard ('Jasper Hale','2021/10/26','2021/11/26');
 
   var vaccineCardArray = [customerVax1, customerVax2, customerVax3, customerVax4];
 
@@ -55,7 +55,7 @@ this.calculateDays= function(){
     this.difference = this.today.getTime() - this.secondDosage.getTime();
     difference = Math.floor (difference / 86400000);
     return this.difference;
-  }
+  };
 
   if(idCardArray[index].expired == false){
     if (idCardArray[index].name == this.name){
@@ -75,6 +75,8 @@ this.calculateDays= function(){
     return "Not allowed entry";
   }
 
+var checkCustomerStatus
+
   this.checkCustomerStatus= function (index){
     if (idCardArray[index].expiry == true){
       return "YOUR ID CARD IS EXPIRED";
@@ -93,10 +95,10 @@ this.calculateDays= function(){
 
   var vaccineArray = vaccineCardArray.length;
   for (var i=0; i< vaccineArray; i++){
-    document.write("<tr>")
-    document.write("<td>", idCardArray[i].name, "</td>")
-    document.write("<td>", vaccineArray[i].checkVaccination(i), "</td>")
-    document.write("</tr>")
+    document.write("<tr>");
+    document.write("<td>", idCardArray[i].name, "</td>");
+    document.write("<td>", vaccineArray[i].checkVaccination(i), "</td>");
+    document.write("</tr>");
   }
 /*
 var vaccinated = true;
