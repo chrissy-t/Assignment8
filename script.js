@@ -18,12 +18,7 @@ function idCard(name,expiryDate){
     }
    
     //create array for ID card
-    for (var i = 0; i < idCardArray.length; i++){
-      if (idCardArray[i].expired) {
-        console.log ('denied')
-      } else {
-        console.log('granted')
-      }
+
 var customer1 = new idCard('Bella Loca Swan', '2025/02/08');
 var customer2 = new idCard('Edward Cullen', '2011/09/02');
 var customer3 = new idCard('Jacob Black', '2022/10/25');
@@ -33,7 +28,7 @@ var customer4 = new idCard('Jasper Hale', '2021/12/22');
 
  
 
- /*
+ 
 //vaccine card object
 function vaccineCard(name, firstDosage, secondDosage){
   this.name = name;
@@ -65,23 +60,7 @@ this.calculateDays= function(){
 
   }
 
-  if(idCardArray[index].expired == false){
-    if (idCardArray[index].name == this.name){
-      if (this.vaccinated == true) {
-        if (date >= 14) {
-          return "Fully Vaccinated sir";
-        }else {
-          return "Not allowed entry";
-        }
-      } else {
-        return "Not allowed entry";
-      }
-    } else {
-      return "Not allowed entry";
-    }
-  } else {
-    return "Not allowed entry";
-  }
+  
 
 var checkCustomerStatus;
 
@@ -94,8 +73,6 @@ var checkCustomerStatus;
       return "FIRST VACCINE SHOT NOT RECIEVED";
     }else if (!this.secondDosage){
       return "SECOND VACCINE SHOT NOT RECIEVED";
-    }else if(this.calculateDays() < 14){
-      return " THE REQURED 14 DAYS HAS NOT PASSED SINCE SECOND DOSAGE";
     }else{
       return "YOU ARE FULLY VACCINATED";
     };
